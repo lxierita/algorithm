@@ -19,7 +19,6 @@ func Solution() [][]int {
 				if set := []int{a, b, v[0], v[1]}; Found(set, solutions) == false {
 					solutions = append(solutions, set)
 				}
-				continue
 			} else {
 				m[sum] = []int{a, b}
 			}

@@ -11,6 +11,7 @@ func TestSolution_should_return_all_positive_integer_solutions(t *testing.T) {
 	fmt.Println(len(got))
 	for _, set := range got {
 		m := make(map[int]int)
+		// fmt.Println(set)
 		for i, n := range set {
 			if n > 1000 || n < 1 {
 				t.Errorf("a, b, c, d should be less than 1000, got %d", n)
