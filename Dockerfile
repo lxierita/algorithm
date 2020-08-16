@@ -1,10 +1,8 @@
 FROM golang:1.14
 
-RUN mkdir app/
-WORKDIR /app/
+RUN mkdir /app
+COPY . /app
 
-ADD . ./
-RUN go build main.go
-
-COPY . . 
-CMD ["./main"]
+WORKDIR /app
+RUN go build -o main .
+CMD [ "/app/main" ]
