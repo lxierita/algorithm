@@ -1,8 +1,8 @@
 package solution_test
 
 import (
+	. "algorithm/solution"
 	"fmt"
-	. "solution"
 	"testing"
 )
 
