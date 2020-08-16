@@ -1,12 +1,12 @@
-packgage main 
+package main
 
 import (
-	solution
-	fmt
+	s "algorithm/solution"
+	"fmt"
 )
 
 func main() {
-	if res := Solution(); res != nil {
+	if res := s.Solution(); res != nil {
 		fmt.Println(res)
 	}
 }
