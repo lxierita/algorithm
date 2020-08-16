@@ -15,7 +15,7 @@ func CreateText() (err error) {
 
 	var result string
 	for _, set := range Solution() {
-		result = fmt.Sprintf("%v\n%v", removeBrackets(set), result)
+		result = fmt.Sprintf("%v\n%v", formatSets(set), result)
 	}
 	defer file.Close()
 	_, err = file.WriteString(result)
@@ -25,9 +25,14 @@ func CreateText() (err error) {
 	return err
 }
 
-func removeBrackets(set []int) string {
+func formatSets(set []int) string {
 	str := fmt.Sprintf("%v", set)
+
+	//remove brackets
 	re := regexp.MustCompile(`[\[\]]+`)
 	str = re.ReplaceAllString(str, "")
+	//use comma instead of whitespace
+	re = regexp.MustCompile(`\s`)
+	str = re.ReplaceAllString(str, ",")
 	return str
 }
